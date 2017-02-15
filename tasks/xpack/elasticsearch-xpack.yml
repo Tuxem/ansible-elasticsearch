@@ -1,6 +1,6 @@
 ---
 
-- set_fact: es_version_changed={{ ((elasticsearch_install_from_package is defined and (debian_elasticsearch_install_from_repo.changed or redhat_elasticsearch_install_from_repo.changed)) or (elasticsearch_install_from_package is defined and elasticsearch_install_from_package.changed)) }}
+- set_fact: es_version_changed={{ ((elasticsearch_install_from_package is defined and ((ebian_elasticsearch_install_from_repo is defined and debian_elasticsearch_install_from_repo.changed) or (redhat_elasticsearch_install_from_repo is defined and redhat_elasticsearch_install_from_repo.changed))) or (elasticsearch_install_from_package is defined and elasticsearch_install_from_package.changed)) }}
 
 - include: elasticsearch-xpack-install.yml
 
